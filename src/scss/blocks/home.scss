@@ -1,0 +1,20 @@
+@use '../mixins/responsive.scss' as *;
+.game-modes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 387.5px;
+  gap: 4rem;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 387.5px;
+  }
+  @include responsive(laptop) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
