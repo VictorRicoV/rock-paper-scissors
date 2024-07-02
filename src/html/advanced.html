@@ -1,9 +1,7 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,23 +11,25 @@
     <link rel="stylesheet" href="css/styles.css" />
     <title>Rock, paper, scissors</title>
   </head>
-  <body>
+  <body data-mode="advanced">
     <header class="header">
       <div class="score">
         <span class="title-score">YOU</span>
         <span id="points-user" class="score__points">0</span>
       </div>
-      <div class="logo">
+      <div class="logo logo--advanced">
         <span class="block">ROCK</span>
         <span class="block">PAPER</span>
         <span class="block">SCISSORS</span>
+        <span class="block">LIZARD</span>
+        <span class="block">SPOCK</span>
       </div>
       <div class="score">
         <span class="title-score">PC</span>
         <span id="points-pc" class="score__points">0</span>
       </div>
     </header>
-    <main class="main">
+    <main>
       <div class="game-container" id="game-container">
         <div class="game-item paper" data-item="paper">
           <img
@@ -50,6 +50,20 @@
             class="icon icon-scissors"
             src="../assets/images/icon-scissors.svg"
             alt="scissors"
+          />
+        </div>
+        <div class="lizard" data-item="lizard">
+          <img
+            class="icon icon-lizard"
+            src="../assets/images/icon-lizard.svg"
+            alt="lizard"
+          />
+        </div>
+        <div class="spock" data-item="spock">
+          <img
+            class="icon icon-spock"
+            src="../assets/images/icon-spock.svg"
+            alt="spock"
           />
         </div>
       </div>
@@ -83,7 +97,7 @@
     </main>
     <button id="button-rules" class="button-rules">RULES</button>
     <div id="modal" class="modal hide">
-      <img src="../assets/images/image-rules.svg" alt="game rules" />
+      <img src="../assets/images/image-rules-bonus.svg" alt="" />
     </div>
     <script type="module" src="../js/index.js"></script>
   </body>

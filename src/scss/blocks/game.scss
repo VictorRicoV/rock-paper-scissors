@@ -1,0 +1,56 @@
+.icon {
+  pointer-events: none;
+}
+
+.hide {
+  display: none;
+}
+
+.game-container {
+  position: relative;
+  background-image: url(../../assets/images/bg-triangle.svg);
+  background-size: 226px 200px;
+  position: relative;
+  width: 312px;
+  height: 282px;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game-item {
+  position: relative;
+  width: 130px;
+  height: 133px;
+  border-radius: 50%;
+}
+
+.paper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e5e5;
+  border: 15px solid var(--paper);
+}
+.rock {
+  position: absolute;
+  bottom: 0;
+  left: 90.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e5e5;
+  border: 15px solid var(--rock);
+}
+.scissors {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e5e5;
+  border: 15px solid var(--scissors);
+}

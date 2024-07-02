@@ -2,14 +2,16 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 800px;
   height: 100vh;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 32px;
   color: #fff;
   background-image: var(--background-gradient);
   font-family: 'Barlow Semi Condensed', sans-serif;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
