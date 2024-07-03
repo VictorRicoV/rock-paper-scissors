@@ -1,2 +1,23 @@
+@use '../mixins/hover.scss' as *;
 .button-rules {
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
+  background: none;
+  padding: 1rem 2rem;
+  width: 150px;
+  border: none;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.button-playAgain {
+  width: 220px;
+  height: 48px;
+  border-radius: 8px;
+  color: #3b4262;
+  border: none;
+  cursor: pointer;
 }

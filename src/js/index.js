@@ -1,6 +1,6 @@
 // El styles lo importamos aquí para que se encargue Vite de compilar todo
 import '../scss/styles.scss';
-const gameContainerElement = document.getElementById('game-container');
+const gameContainerElement = document.getElementById('game-items');
 const pointsUserElement = document.getElementById('points-user');
 const pointsPcElement = document.getElementById('points-pc');
 const gameResultsElement = document.getElementById('game-results');
@@ -10,6 +10,7 @@ const pickedUserImageElement = document.getElementById('picked-user-image');
 const pickedPcImageElement = document.getElementById('picked-pc-image');
 const rulesElement = document.getElementById('button-rules');
 const modalElement = document.getElementById('modal');
+const resultElement = document.getElementById('result');
 
 const pcOptions = ['paper', 'scissors', 'rock'];
 
@@ -63,28 +64,43 @@ if (document.body.dataset.mode === 'advanced') {
   pcOptions.push('lizard', 'spock');
 }
 
+const removeLastClass = () => {
+  const pcLastClass = pickedPcImageElement.parentElement.classList.length - 1;
+  const userLastClass =
+    pickedUserImageElement.parentElement.classList.length - 1;
+  pickedUserImageElement.parentElement.classList.remove(
+    pickedUserImageElement.parentElement.classList[pcLastClass]
+  );
+  pickedPcImageElement.parentElement.classList.remove(
+    pickedPcImageElement.parentElement.classList[userLastClass]
+  );
+};
+
 const changeResultImage = () => {
+  removeLastClass();
   pickedUserImageElement.src = gameImage[userPlay];
   pickedPcImageElement.src = gameImage[pcPlay];
+  pickedUserImageElement.parentElement.classList.add('game-item--' + userPlay);
+  pickedPcImageElement.parentElement.classList.add('game-item--' + pcPlay);
 };
 
 const showResults = () => {
   gameResultsElement.classList.remove('hide');
   gameContainerElement.classList.add('hide');
+  resultElement.classList.remove('hide');
 };
 
 const hideResults = () => {
   gameResultsElement.classList.add('hide');
   gameContainerElement.classList.remove('hide');
+  resultElement.classList.add('hide');
 };
 
 const whoWins = () => {
   if (userPlay === pcPlay) {
     console.log('empate');
     textGameResultElement.textContent = 'TIE';
-    return;
-  }
-  if (gameOptions[userPlay][pcPlay]) {
+  } else if (gameOptions[userPlay][pcPlay]) {
     console.log('ganaste');
     textGameResultElement.textContent = 'YOU WIN';
     userPoints++;
@@ -96,6 +112,7 @@ const whoWins = () => {
   pointsUserElement.textContent = userPoints;
   pointsPcElement.textContent = pcPoints;
 };
+
 const setPcSelection = () => {
   const randomNumber = Math.floor(Math.random() * pcOptions.length);
   pcPlay = pcOptions[randomNumber];
@@ -104,14 +121,19 @@ const setPcSelection = () => {
   showResults();
   changeResultImage();
 };
+
 const setUserSelection = event => {
-  userPlay = event.target.dataset.item;
+  const selectedElement = event.target.closest('.game-item');
+  if (!selectedElement) return;
+
+  userPlay = selectedElement.dataset.item;
   setPcSelection();
 };
 
 const hideModal = () => {
   modalElement.classList.add('hide');
 };
+
 const showModal = () => {
   modalElement.classList.remove('hide');
 };

@@ -30,61 +30,72 @@
       </div>
     </header>
     <main class="main">
-      <div class="game-container" id="game-container">
-        <div class="game-item paper" data-item="paper">
+      <div id="game-items" class="game-items game-items--simple">
+        <div
+          class="game-item game-item--paper game-item--paper-simple"
+          data-item="paper"
+        >
           <img
-            class="icon icon-paper"
             src="../assets/images/icon-paper.svg"
-            alt="paper"
+            class="game-item__image"
+            alt="icon paper"
           />
         </div>
-        <div class="game-item rock" data-item="rock">
+        <div
+          class="game-item game-item--scissors game-item--scissors-simple"
+          data-item="scissors"
+        >
           <img
-            class="icon icon-rock"
-            src="../assets/images/icon-rock.svg"
-            alt="rock"
-          />
-        </div>
-        <div class="game-item scissors" data-item="scissors">
-          <img
-            class="icon icon-scissors"
             src="../assets/images/icon-scissors.svg"
-            alt="scissors"
+            class="game-item__image"
+            alt="icon scissors"
+          />
+        </div>
+        <div
+          class="game-item game-item--rock game-item--rock-simple"
+          data-item="rock"
+        >
+          <img
+            src="../assets/images/icon-rock.svg"
+            class="game-item__image"
+            alt="icon rock"
           />
         </div>
       </div>
+
       <div id="game-results" class="game-results hide">
-        <div>
-          <h2>Your Picked</h2>
+        <div class="user-picked">
+          <h2 class="result__title--game">Your Picked</h2>
           <div class="game-item game-item--result">
             <img
               id="picked-user-image"
-              src="../assets/images/icon-rock.svg"
+              src="../assets/images/icon-lizard.svg"
               alt=""
             />
           </div>
         </div>
-        <div>
-          <h2 id="game-result">YOU WIN</h2>
-          <button id="play-again">PLAY AGAIN</button>
-        </div>
 
-        <div>
-          <h2>PC Picked</h2>
+        <div class="pc-picked">
+          <h2 class="result__title--game">PC Picked</h2>
           <div class="game-item game-item--result">
             <img
               id="picked-pc-image"
-              src="../assets/images/icon-paper.svg"
+              src="../assets/images/icon-lizard.svg"
               alt=""
             />
           </div>
         </div>
       </div>
+      <div id="result" class="result hide">
+        <h2 class="result__title" id="game-result">YOU WIN</h2>
+        <button class="button-playAgain" id="play-again">PLAY AGAIN</button>
+      </div>
+      <button id="button-rules" class="button-rules">RULES</button>
+      <div id="modal" class="modal hide">
+        <h2 class="modal__title">RULES</h2>
+        <img src="../assets/images/image-rules.svg" alt="game rules" />
+      </div>
     </main>
-    <button id="button-rules" class="button-rules">RULES</button>
-    <div id="modal" class="modal hide">
-      <img src="../assets/images/image-rules.svg" alt="game rules" />
-    </div>
     <script type="module" src="../js/index.js"></script>
   </body>
 </html>

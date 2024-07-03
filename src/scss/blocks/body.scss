@@ -2,10 +2,11 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  position: relative;
   max-width: 800px;
   height: 100vh;
   margin: 0 auto;
-  padding: 32px;
+  padding: 3rem 0;
   color: #fff;
   background-image: var(--background-gradient);
   font-family: 'Barlow Semi Condensed', sans-serif;

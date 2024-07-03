@@ -1,15 +1,12 @@
+@use '../mixins/hover.scss' as *;
 .icon {
   pointer-events: none;
 }
 
-.hide {
-  display: none;
-}
-
-.game-container {
-  position: relative;
+.game-items--simple {
   background-image: url(../../assets/images/bg-triangle.svg);
-  background-size: 226px 200px;
+}
+.game-items {
   position: relative;
   width: 312px;
   height: 282px;
@@ -17,40 +14,87 @@
   margin-right: auto;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 240px 210px;
 }
-
 .game-item {
-  position: relative;
-  width: 130px;
-  height: 133px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 115px;
   border-radius: 50%;
+  box-shadow: 0 5px var(--shadow), inset 0 5px rgba(0, 0, 150, 0.1);
+  background-color: #fff;
+  transition: transform 0.2s;
+  cursor: pointer;
+  @include hover {
+    scale: 0.95;
+  }
 }
 
-.paper {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e5e5e5;
+.game-item--paper {
   border: 15px solid var(--paper);
+  --shadow: var(--paper-shadow);
 }
-.rock {
-  position: absolute;
+.game-item--paper-simple {
+  top: 0;
+  left: 0px;
+}
+.game-item--rock-simple {
   bottom: 0;
-  left: 90.8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e5e5e5;
-  border: 15px solid var(--rock);
+  left: 100px;
 }
-.scissors {
-  position: absolute;
+.game-item--rock {
+  border: 15px solid var(--rock);
+  --shadow: var(--rock-shadow);
+}
+.game-item--scissors-simple {
   top: 0;
   right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e5e5e5;
+}
+.game-item--scissors {
   border: 15px solid var(--scissors);
+  --shadow: var(--scissors-shadow);
+}
+
+.user-picked,
+.pc-picked {
+  height: 183px;
+  width: 115px;
+}
+.result {
+  text-align: center;
+  &__title {
+    margin: 0;
+  }
+}
+
+.game-results {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7.0625rem;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  color: #3b4262;
+  &__title {
+    margin: 0;
+  }
+}
+
+.hide {
+  display: none;
 }
