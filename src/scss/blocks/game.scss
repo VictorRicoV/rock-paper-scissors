@@ -41,6 +41,7 @@
   margin-right: auto;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 300px 300px;
 }
 
 .game-item--paper {
@@ -65,7 +66,7 @@
 }
 .game-item--rock-advanced {
   top: 350px;
-  left: 225px;
+  left: 220px;
 }
 .game-item--scissors-simple {
   top: 0;
@@ -77,7 +78,7 @@
 }
 .game-item--scissors-advanced {
   top: 50px;
-  left: 120px;
+  left: 115px;
 }
 
 .game-item--spock {
@@ -95,7 +96,7 @@
 
 .game-item--lizard-advanced {
   top: 350px;
-  left: 25px;
+  left: 15px;
 }
 .user-picked,
 .pc-picked {
