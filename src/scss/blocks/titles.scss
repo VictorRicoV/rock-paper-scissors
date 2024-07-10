@@ -15,3 +15,10 @@
     margin: 0 0 12px;
   }
 }
+
+.block {
+  font-size: 3rem;
+  &--advanced {
+    font-size: 2rem;
+  }
+}

@@ -11,7 +11,10 @@
   padding: 1.6rem 1rem;
   border: 2px solid var(--header-outline);
   border-radius: 1rem;
-  font-size: 3rem;
+
+  &--advanced {
+    margin-bottom: 16px;
+  }
 }
 
 .score {

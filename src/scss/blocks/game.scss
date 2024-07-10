@@ -32,6 +32,16 @@
     scale: 0.95;
   }
 }
+.game-items--advanced {
+  background-image: url(../../assets/images/bg-pentagon.svg);
+  position: relative;
+  width: 340px;
+  height: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .game-item--paper {
   border: 15px solid var(--paper);
@@ -41,6 +51,10 @@
   top: 0;
   left: 0px;
 }
+.game-item--paper-advanced {
+  top: 175px;
+  left: 250px;
+}
 .game-item--rock-simple {
   bottom: 0;
   left: 100px;
@@ -48,6 +62,10 @@
 .game-item--rock {
   border: 15px solid var(--rock);
   --shadow: var(--rock-shadow);
+}
+.game-item--rock-advanced {
+  top: 350px;
+  left: 225px;
 }
 .game-item--scissors-simple {
   top: 0;
@@ -57,7 +75,28 @@
   border: 15px solid var(--scissors);
   --shadow: var(--scissors-shadow);
 }
+.game-item--scissors-advanced {
+  top: 50px;
+  left: 120px;
+}
 
+.game-item--spock {
+  border: 15px solid var(--spock);
+  --shadow: var(--spock-shadow);
+}
+.game-item--spock-advanced {
+  top: 175px;
+  left: -30px;
+}
+.game-item--lizard {
+  border: 15px solid var(--lizard);
+  --shadow: var(--lizard-shadow);
+}
+
+.game-item--lizard-advanced {
+  top: 350px;
+  left: 25px;
+}
 .user-picked,
 .pc-picked {
   height: 183px;
